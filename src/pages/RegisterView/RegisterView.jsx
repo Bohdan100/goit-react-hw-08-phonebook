@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/authorization';
-import { RegisterForm, RegisterLabel } from './RegisterView.styled';
+import {
+  RegisterTitle,
+  RegisterText,
+  RegisterForm,
+  RegisterLabel,
+  RegisterButton,
+} from './RegisterView.styled';
 
 const RegisterView = () => {
   const dispatch = useDispatch();
@@ -32,7 +38,9 @@ const RegisterView = () => {
 
   return (
     <div>
-      <h1>Create your account</h1>
+      <RegisterTitle>Create your account</RegisterTitle>
+
+      <RegisterText>Create a name, email and password</RegisterText>
 
       <RegisterForm onSubmit={handleSubmit} autoComplete="off">
         <RegisterLabel>
@@ -60,7 +68,7 @@ const RegisterView = () => {
           />
         </RegisterLabel>
 
-        <button type="submit">Sign up</button>
+        <RegisterButton type="submit">Sign up</RegisterButton>
       </RegisterForm>
     </div>
   );

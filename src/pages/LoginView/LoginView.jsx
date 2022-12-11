@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/authorization';
 
-import { LoginForm, LoginLabel } from './LoginView.styled';
+import {
+  LoginTitle,
+  LoginText,
+  LoginForm,
+  LoginLabel,
+  LoginButton,
+} from './LoginView.styled';
 
 const LoginView = () => {
   const dispatch = useDispatch();
@@ -29,11 +35,12 @@ const LoginView = () => {
 
   return (
     <div>
-      <h1>Страница логина</h1>
+      <LoginTitle>Please log in to your account</LoginTitle>
+      <LoginText>Enter your e-mail address and password</LoginText>
 
       <LoginForm onSubmit={handleSubmit} autoComplete="off">
         <LoginLabel>
-          Почта
+          E-mail
           <input
             type="email"
             name="email"
@@ -43,7 +50,7 @@ const LoginView = () => {
         </LoginLabel>
 
         <LoginLabel>
-          Пароль
+          Password
           <input
             type="password"
             name="password"
@@ -52,7 +59,7 @@ const LoginView = () => {
           />
         </LoginLabel>
 
-        <button type="submit">Войти</button>
+        <LoginButton type="submit">Continue</LoginButton>
       </LoginForm>
     </div>
   );
