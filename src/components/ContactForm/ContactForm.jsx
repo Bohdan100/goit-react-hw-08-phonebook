@@ -31,6 +31,7 @@ export const ContactForm = () => {
     );
 
     if (errorArray.length === 0) {
+      console.log(typeof userNumber);
       const newContact = { id: nanoid(5), name: userName, number: userNumber };
 
       dispatch(addContact(newContact));

@@ -27,8 +27,8 @@ export const Contacts = () => {
       {error && <b>{error}</b>}
       <ContactsList>
         {visibleContacts.length > 0 &&
-          visibleContacts.map(({ id, name, phone }) => (
-            <ContactsItem key={id} id={id} name={name} number={phone} />
+          visibleContacts.map(({ id, name, number }) => (
+            <ContactsItem key={id} id={id} name={name} number={number} />
           ))}
       </ContactsList>
     </>
