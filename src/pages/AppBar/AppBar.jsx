@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 // import Navigation from './Navigation';
 import UserMenu from 'components/UserMenu';
+import Navigation from 'components/UserMenu/Navigation';
 import { AuthNav } from 'components/AuthNav';
 
 import { authSelectors } from 'redux/authorization';
@@ -16,6 +17,7 @@ export default function AppBar() {
     <>
       <MainWrapper>
         <AppBarWrapper>
+        <Navigation />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
           <HomeLink to="/">
             <span>phonebook</span>
