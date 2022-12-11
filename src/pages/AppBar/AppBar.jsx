@@ -5,7 +5,6 @@ import { Outlet } from 'react-router-dom';
 import UserMenu from 'components/UserMenu';
 import { AuthNav } from 'components/AuthNav';
 
-import { ImAddressBook } from 'react-icons/im';
 import { authSelectors } from 'redux/authorization';
 
 import { UserTheme } from 'components/UserTheme';
@@ -24,7 +23,6 @@ export default function AppBar() {
           <UserTheme />
         </AppBarWrapper>
 
-        <ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />
         <Outlet />
       </MainWrapper>
     </>
