@@ -23,7 +23,7 @@ export const ContactsButtonDelete = styled.button`
   cursor: pointer;
   outline: none;
   border: ${p => p.theme.borders.none};
-  border-radius: ${p => p.theme.radius.normal};
+  border-radius: ${p => p.theme.radii.normal};
 
   font-size: ${p => p.theme.fontSizes.xs};
   line-height: ${p => p.theme.lineHeights.heading};
