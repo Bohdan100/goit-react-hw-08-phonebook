@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
 // import Navigation from './Navigation';
-// import UserMenu from 'components/UserMenu';
+import UserMenu from 'components/UserMenu';
 import { AuthNav } from 'components/AuthNav';
 
 import { ImAddressBook } from 'react-icons/im';
@@ -17,13 +17,7 @@ export default function AppBar() {
     <>
       <MainWrapper>
         <AppBarWrapper>
-          {isLoggedIn ? (
-            <p>UserMenu</p>
-          ) : (
-            <p>
-              <AuthNav />
-            </p>
-          )}
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
           <HomeLink to="/">
             <span>phonebook</span>
           </HomeLink>
