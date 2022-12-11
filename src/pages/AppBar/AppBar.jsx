@@ -17,12 +17,14 @@ export default function AppBar() {
     <>
       <MainWrapper>
         <AppBarWrapper>
-        <Navigation />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          <Navigation />
+
           <HomeLink to="/">
             <span>phonebook</span>
           </HomeLink>
           <UserTheme />
+
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </AppBarWrapper>
 
         <Outlet />

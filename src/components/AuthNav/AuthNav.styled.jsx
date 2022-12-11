@@ -19,8 +19,10 @@ export const NavigationItem = styled.li`
 `;
 
 export const NavigationLink = styled(NavLink)`
-  color: ${p => p.theme.colors.white};
+  padding: 15px;
   text-decoration: none;
+
+  color: ${p => p.theme.colors.white};
 
   &.active {
     color: ${p => p.theme.colors.orange};

@@ -3,6 +3,7 @@ export const theme = {
     indigo: '#3f51b5',
     indigoAccent: '#303f9f',
     red: '#f44336',
+    redFirst: '#E84A5F',
     redAccent: '#d32f2f',
     green: '#4caf50',
     black: '#2a2a2a',

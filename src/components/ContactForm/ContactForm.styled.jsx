@@ -7,7 +7,7 @@ export const PhonebookForm = styled.form`
   flex-direction: column;
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.green};
-  border-radius: ${p => p.theme.radius.normal};
+  border-radius: ${p => p.theme.radii.normal};
 `;
 
 export const PhonebookFormButton = styled.button`
@@ -19,7 +19,7 @@ export const PhonebookFormButton = styled.button`
   cursor: pointer;
   outline: none;
   border: ${p => p.theme.borders.none};
-  border-radius: ${p => p.theme.radius.normal};
+  border-radius: ${p => p.theme.radii.normal};
 
   font-weight: ${p => p.theme.fontWeights.middle};
   color: ${p => p.theme.colors.white};

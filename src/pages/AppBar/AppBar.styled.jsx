@@ -30,6 +30,7 @@ export const AppBarWrapper = styled.nav`
 `;
 
 export const HomeLink = styled(Link)`
+  padding: 10px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
