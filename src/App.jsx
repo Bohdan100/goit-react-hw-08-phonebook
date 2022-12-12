@@ -1,13 +1,21 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, Suspense, lazy } from 'react';
 import { ImAddressBook } from 'react-icons/im';
 
+import { authOperations, authSelectors } from 'redux/authorization';
 import AppBar from './pages/AppBar';
 import RegisterView from './pages/RegisterView';
 import LoginView from './pages/LoginView';
 import PhonebookView from './pages/PhonebookView';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<AppBar />}>

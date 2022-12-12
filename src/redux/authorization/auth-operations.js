@@ -63,9 +63,14 @@ const logOut = createAsyncThunk('auth/logout', async () => {
  * headers:
  *    Authorization: Bearer token
  *
- * 1. Забираем токен из стейта через getState()
- * 2. Если токена нет, выходим не выполняя никаких операций
- * 3. Если токен есть, добавляет его в HTTP-заголовок и выполянем операцию
+ * 1. Fetch-запрос на бекенд за данными пользователя 
+ * при обновлении (перезагрузке) страницы - чтоб
+ * был залогиненый пользователь в AppBar
+ * 2. Токен берем из текущего state через getState()
+ * 3. Если токена нет, выходим не делая http-запрос на бекенд
+ * 4. Если токен есть, добавляет его в HTTP-заголовок и делаем
+ * http-запрос, получая залогиненого пользователя,
+ * isLoggin = true
  */
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
@@ -74,7 +79,6 @@ const fetchCurrentUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      console.log('Токена нет, уходим из fetchCurrentUser');
       return thunkAPI.rejectWithValue();
     }
 
