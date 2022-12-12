@@ -1,13 +1,13 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, lazy } from 'react';
-import { ImAddressBook } from 'react-icons/im';
 
 import { authOperations, authSelectors } from 'redux/authorization';
 import { RestrictedRoute } from 'components/Routes/RestrictedRoute';
 import { PrivateRoute } from 'components/Routes/PrivateRoute';
 
 import AppBar from './pages/AppBar';
+import HomeView from './pages/HomeView';
 
 const RegisterView = lazy(() => import('./pages/RegisterView'));
 const LoginView = lazy(() => import('./pages/LoginView'));
@@ -26,10 +26,7 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<AppBar />}>
-        <Route
-          index
-          element={<ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />}
-        />
+        <Route index element={<HomeView />} />
         <Route
           path="/register"
           element={

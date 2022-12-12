@@ -9,7 +9,12 @@ import { AuthNav } from 'components/AuthNav';
 import { authSelectors } from 'redux/authorization';
 
 import { UserTheme } from 'components/UserTheme';
-import { MainWrapper, AppBarWrapper, HomeLink } from './AppBar.styled';
+import {
+  MainWrapper,
+  AppBarWrapper,
+  HomeLink,
+  UserWrapper,
+} from './AppBar.styled';
 
 export default function AppBar() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -22,9 +27,11 @@ export default function AppBar() {
           <HomeLink to="/">
             <span>phonebook</span>
           </HomeLink>
-          <UserTheme />
 
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          <UserWrapper>
+            <UserTheme />
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          </UserWrapper>
         </AppBarWrapper>
         <Suspense fallback={<p>Загружаем...</p>}>
           <Outlet />

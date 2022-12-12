@@ -35,7 +35,19 @@ export const HomeLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
 
+  font-size: ${p => p.theme.fontSizes.xl};
+  line-height: ${p => p.theme.lineHeights.heading};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  color: ${p => p.theme.colors.blueFirst};
+
   &:hover {
-    color: ${p => p.theme.colors.blueFirst};
+    /* color: ${p => p.theme.colors.blueFirst}; */
   }
+`;
+
+export const UserWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
 `;
