@@ -27,8 +27,25 @@ export const LoginForm = styled.form`
 export const LoginLabel = styled.label`
   display: flex;
   flex-direction: column;
+  align-items: start;
+  gap: 10px;
 
   margin-bottom: 15px;
+`;
+
+export const InputTextWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const InputTextIcon = styled.div`
+  margin-top: 3px;
+`;
+
+export const LoginInput = styled.input`
+  min-width: 320px;
+  padding: 5px;
+  border-radius: ${p => p.theme.radii.normal};
 `;
 
 export const LoginButton = styled.button`
@@ -36,7 +53,7 @@ export const LoginButton = styled.button`
   margin-left: auto;
   margin-right: auto;
 
-  padding: ${p => p.theme.space[4]}px;
+  padding: ${p => p.theme.space[3]}px;
   border-radius: ${p => p.theme.radii.border};
   background-color: ${p => p.theme.colors.blueFirst};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);

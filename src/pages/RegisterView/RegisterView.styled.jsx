@@ -33,6 +33,15 @@ export const RegisterLabel = styled.label`
   margin-bottom: 15px;
 `;
 
+export const InputTextWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const InputTextIcon = styled.div`
+  margin-top: 3px;
+`;
+
 export const RegisterInput = styled.input`
   min-width: 320px;
   padding: 5px;
@@ -65,15 +74,4 @@ export const RegisterButton = styled.button`
   :focus {
     background-color: ${p => p.theme.colors.indigo};
   }
-`;
-
-export const InputTextWrapper = styled.div`
-  display: flex;
-  justify-content: baseline;
-  align-items: center;
-  gap: 10px;
-`;
-
-export const InputTextIcon = styled.div`
-  margin-top: 5px;
 `;

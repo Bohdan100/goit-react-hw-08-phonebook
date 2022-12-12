@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/authorization';
+import { ImEye, ImEyeBlocked, ImRedo2 } from 'react-icons/im';
 
 import {
   LoginTitle,
   LoginText,
   LoginForm,
   LoginLabel,
+  LoginInput,
+  InputTextWrapper,
+  InputTextIcon,
   LoginButton,
 } from './LoginView.styled';
 
@@ -14,6 +18,10 @@ const LoginView = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // input-password
+  const [toggleIcon, setToggleIcon] = useState(<ImEye />);
+  const [type, setType] = useState('password');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -33,6 +41,17 @@ const LoginView = () => {
     setPassword('');
   };
 
+  // input-password
+  const togglePassInput = e => {
+    if (type === 'password') {
+      setType('text');
+      setToggleIcon(<ImEyeBlocked />);
+    } else {
+      setType('password');
+      setToggleIcon(<ImEye />);
+    }
+  };
+
   return (
     <div>
       <LoginTitle>Please log in to your account</LoginTitle>
@@ -41,25 +60,35 @@ const LoginView = () => {
       <LoginForm onSubmit={handleSubmit} autoComplete="off">
         <LoginLabel>
           E-mail
-          <input
+          <LoginInput
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            placeholder="Enter your mail"
           />
         </LoginLabel>
 
         <LoginLabel>
-          Password
-          <input
-            type="password"
+          <InputTextWrapper>
+            <span>Password:</span>
+            <InputTextIcon onClick={togglePassInput}>
+              {toggleIcon}
+            </InputTextIcon>
+          </InputTextWrapper>
+
+          <LoginInput
+            type={type}
             name="password"
             value={password}
             onChange={handleChange}
+            placeholder="Enter your password"
           />
         </LoginLabel>
 
-        <LoginButton type="submit">Continue</LoginButton>
+        <LoginButton type="submit">
+          Continue <ImRedo2 size={16} />
+        </LoginButton>
       </LoginForm>
     </div>
   );
