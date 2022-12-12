@@ -11,8 +11,6 @@ import PhonebookView from './pages/PhonebookView';
 import { RestrictedRoute } from 'components/Routes/RestrictedRoute';
 import { PrivateRoute } from 'components/Routes/PrivateRoute';
 
-
-
 export const App = () => {
   const dispatch = useDispatch();
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
@@ -20,16 +18,34 @@ export const App = () => {
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
-  return (
+
+  return isFetchingCurrentUser ? (
+    'Fetching user data'
+  ) : (
     <Routes>
       <Route path="/" element={<AppBar />}>
         <Route
           index
           element={<ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />}
         />
-        <Route path="/register" element={<RestrictedRoute component={RegisterView} redirectTo='/contacts'/>} />
-        <Route path="/login" element={<RestrictedRoute component={LoginView} redirectTo='/contacts'/>} />
-        <Route path="/contacts" element={<PrivateRoute component={PhonebookView} redirectTo='/login'/>} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute component={RegisterView} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={LoginView} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute component={PhonebookView} redirectTo="/login" />
+          }
+        />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
