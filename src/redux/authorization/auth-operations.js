@@ -4,9 +4,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 /* 1. register - регистрация пользователя { name, email, password }
  * 2. logIn - вхождение по имени и паролю { email, password }
  * 3. logOut - выход пользователя из системы
- * set(token) - добавление токена (ключа) в HTTP-заголовок 
+ * set(token) - добавление токена (ключа) в HTTP-заголовок
  * после успешной регистрации для работы HTTP-запросов
- * unset(token) - удаление токена (ключа) из HTTP-заголовка 
+ * unset(token) - удаление токена (ключа) из HTTP-заголовка
  */
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
@@ -21,43 +21,49 @@ export const token = {
 };
 // fetch('', { method: 'POST', header: { Authorization: 'Bearer token' } });
 
-
-const register = createAsyncThunk('auth/register', async credentials => {
-  try {
-    const { data } = await axios.post('/users/signup', credentials);
-    // add token to next http-requests
-    token.set(data.token);
-    return data;
-  } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
-  }
-});
-
-
-
-const logIn = createAsyncThunk('auth/login', async credentials => {
-  try {
-    const { data } = await axios.post('/users/login', credentials);
+const register = createAsyncThunk(
+  'auth/register',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/signup', credentials);
       // add token to next http-requests
-    token.set(data.token);
-    return data;
-  } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
-});
+);
 
-const logOut = createAsyncThunk('auth/logout', async () => {
-  try {
-    await axios.post('/users/logout');
-    // unset token from random http-requests
-    token.unset();
-  } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
+const logIn = createAsyncThunk(
+  'auth/login',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      // add token to next http-requests
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
-});
+);
+
+const logOut = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try {
+      await axios.post('/users/logout');
+      // unset token from random http-requests
+      token.unset();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 /*
  * GET @ /users/current
- * 1. Fetch-запрос на бекенд за данными пользователя 
+ * 1. Fetch-запрос на бекенд за данными пользователя
  * при обновлении (перезагрузке) страницы - чтоб
  * был залогиненый пользователь в AppBar
  * 2. Токен берем из текущего state через getState()
@@ -81,7 +87,7 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      // TODO: Добавить обработку ошибки error.message
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
