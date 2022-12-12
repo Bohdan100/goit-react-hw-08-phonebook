@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 // import Navigation from './Navigation';
@@ -26,8 +27,9 @@ export default function AppBar() {
 
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </AppBarWrapper>
-
-        <Outlet />
+        <Suspense fallback={<p>Загружаем...</p>}>
+          <Outlet />
+        </Suspense>
       </MainWrapper>
     </>
   );

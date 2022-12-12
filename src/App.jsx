@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, Suspense, lazy } from 'react';
+import { useEffect, lazy } from 'react';
 import { ImAddressBook } from 'react-icons/im';
 
 import { authOperations, authSelectors } from 'redux/authorization';
@@ -30,29 +30,24 @@ export const App = () => {
           index
           element={<ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />}
         />
-        <Suspense fallback={<p>Загружаем...</p>}>
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute
-                component={RegisterView}
-                redirectTo="/contacts"
-              />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute component={LoginView} redirectTo="/contacts" />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute component={PhonebookView} redirectTo="/login" />
-            }
-          />
-        </Suspense>
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute component={RegisterView} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={LoginView} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute component={PhonebookView} redirectTo="/login" />
+          }
+        />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
