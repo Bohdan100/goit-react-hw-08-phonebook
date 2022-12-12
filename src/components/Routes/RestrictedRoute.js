@@ -8,10 +8,7 @@ import { authSelectors } from 'redux/authorization';
  * 3. В противном случае рендерит компонент - форму регистрации (логина)
  */
 
-export const RestrictedRoute = ({
-  component: Component,
-  redirectTo = '/'
-}) => {
+export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  return isLoggedIn ? <Navigate to={redirectTo}/> : <Component/>;
-}
+  return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
+};

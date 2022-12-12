@@ -2,9 +2,8 @@ import { useSelector } from 'react-redux';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-// import Navigation from './Navigation';
 import UserMenu from 'components/UserMenu';
-import Navigation from 'components/UserMenu/Navigation';
+import { Navigation } from 'components/UserMenu/Navigation';
 import { AuthNav } from 'components/AuthNav';
 
 import { authSelectors } from 'redux/authorization';
@@ -34,8 +33,3 @@ export default function AppBar() {
     </>
   );
 }
-
-// <header style={styles.header}>
-//   <Navigation />
-//   {isLoggedIn ? <UserMenu /> : <AuthNav />}
-// </header>

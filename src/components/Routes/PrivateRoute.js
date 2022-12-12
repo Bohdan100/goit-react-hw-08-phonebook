@@ -10,15 +10,11 @@ import { authSelectors } from 'redux/authorization';
  * токен сохранился
  */
 
-
-export const PrivateRoute = ({
-  component: Component,
-  redirectTo = '/'
-}) => {
+export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
   // вывод с маршрута если без токена и не залогинился
   const shouldRedirect = !isFetchingCurrentUser && !isLoggedIn;
 
-  return shouldRedirect ? <Navigate to={redirectTo}/> : <Component/>;
-}
+  return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
+};
