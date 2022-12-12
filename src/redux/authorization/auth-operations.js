@@ -1,6 +1,14 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+/* 1. register - регистрация пользователя { name, email, password }
+ * 2. logIn - вхождение по имени и паролю { email, password }
+ * 3. logOut - выход пользователя из системы
+ * set(token) - добавление токена (ключа) в HTTP-заголовок 
+ * после успешной регистрации для работы HTTP-запросов
+ * unset(token) - удаление токена (ключа) из HTTP-заголовка 
+ */
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const token = {
@@ -11,12 +19,9 @@ export const token = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
+// fetch('', { method: 'POST', header: { Authorization: 'Bearer token' } });
 
-/*
- * POST @ /users/signup
- * body: { name, email, password }
- * После успешной регистрации добавляем токен в HTTP-заголовок
- */
+
 const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
@@ -28,16 +33,12 @@ const register = createAsyncThunk('auth/register', async credentials => {
   }
 });
 
-// fetch('', { method: 'POST', header: { Authorization: 'Bearer token' } });
 
-/*
- * POST @ /users/login
- * body: { email, password }
- * После успешного логина добавляем токен в HTTP-заголовок
- */
+
 const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
+      // add token to next http-requests
     token.set(data.token);
     return data;
   } catch (error) {
@@ -45,14 +46,10 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
   }
 });
 
-/*
- * POST @ /users/logout
- * headers: Authorization: Bearer token
- * После успешного логаута, удаляем токен из HTTP-заголовка
- */
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
     await axios.post('/users/logout');
+    // unset token from random http-requests
     token.unset();
   } catch (error) {
     // TODO: Добавить обработку ошибки error.message
@@ -60,9 +57,6 @@ const logOut = createAsyncThunk('auth/logout', async () => {
 });
 /*
  * GET @ /users/current
- * headers:
- *    Authorization: Bearer token
- *
  * 1. Fetch-запрос на бекенд за данными пользователя 
  * при обновлении (перезагрузке) страницы - чтоб
  * был залогиненый пользователь в AppBar
