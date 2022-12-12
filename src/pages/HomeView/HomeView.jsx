@@ -1,6 +1,6 @@
 import { ImAddressBook } from 'react-icons/im';
 
-import {} from './HomeView.styled';
+import { HomeViewText } from './HomeView.styled';
 
 const HomeView = () => {
   return (

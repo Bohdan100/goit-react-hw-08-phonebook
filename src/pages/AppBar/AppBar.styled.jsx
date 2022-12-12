@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const MainWrapper = styled.nav`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   padding: 0;
   background-color: ${p => p.theme.colors.blueSecond};
