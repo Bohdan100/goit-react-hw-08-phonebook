@@ -1,13 +1,13 @@
 import { ImAddressBook } from 'react-icons/im';
 
-import { HomeViewText } from './HomeView.styled';
+import { HomeViewWrapper, HomeViewText, IconWrapper } from './HomeView.styled';
 
 const HomeView = () => {
   return (
-    <div>
+    <HomeViewWrapper>
       <HomeViewText>Write your contacts in the phone book</HomeViewText>
-      <ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />
-    </div>
+      <IconWrapper> <ImAddressBook size={400}/></IconWrapper>   
+    </HomeViewWrapper>
   );
 };
 

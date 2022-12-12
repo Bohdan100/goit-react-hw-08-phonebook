@@ -40,8 +40,9 @@ export const HomeLink = styled(Link)`
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.blueFirst};
 
-  &:hover {
-    /* color: ${p => p.theme.colors.blueFirst}; */
+  &:hover,
+  :focus {
+    color: ${p => p.theme.colors.indigo};
   }
 `;
 

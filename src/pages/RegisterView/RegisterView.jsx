@@ -6,14 +6,23 @@ import {
   RegisterText,
   RegisterForm,
   RegisterLabel,
+  RegisterInput,
   RegisterButton,
+  InputTextWrapper,
+  InputTextIcon,
 } from './RegisterView.styled';
+
+import { ImEye, ImEyeBlocked, ImUserPlus } from 'react-icons/im';
 
 const RegisterView = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // input-password
+  const [toggleIcon, setToggleIcon] = useState(<ImEye />);
+  const [type, setType] = useState('password');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -36,6 +45,17 @@ const RegisterView = () => {
     setPassword('');
   };
 
+  // input-password
+  const togglePassInput = e => {
+    if (type === 'password') {
+      setType('text');
+      setToggleIcon(<ImEyeBlocked />);
+    } else {
+      setType('password');
+      setToggleIcon(<ImEye />);
+    }
+  };
+
   return (
     <div>
       <RegisterTitle>Create your account</RegisterTitle>
@@ -44,31 +64,47 @@ const RegisterView = () => {
 
       <RegisterForm onSubmit={handleSubmit} autoComplete="off">
         <RegisterLabel>
-          Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          Name:
+          <RegisterInput
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            placeholder="Enter your name"
+          />
         </RegisterLabel>
 
         <RegisterLabel>
-          E-mail
-          <input
+          E-mail:
+          <RegisterInput
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            placeholder="Enter your mail"
           />
         </RegisterLabel>
 
         <RegisterLabel>
-          Password
-          <input
-            type="password"
+          <InputTextWrapper>
+            <span>Password:</span>
+            <InputTextIcon onClick={togglePassInput}>
+              {toggleIcon}
+            </InputTextIcon>
+          </InputTextWrapper>
+
+          <RegisterInput
+            type={type}
             name="password"
             value={password}
             onChange={handleChange}
+            placeholder="Enter your password"
           />
         </RegisterLabel>
 
-        <RegisterButton type="submit">Sign up</RegisterButton>
+        <RegisterButton type="submit">
+          Sign up <ImUserPlus size={16} />
+        </RegisterButton>
       </RegisterForm>
     </div>
   );
