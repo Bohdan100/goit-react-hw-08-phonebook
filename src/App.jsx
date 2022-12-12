@@ -4,12 +4,14 @@ import { useEffect, Suspense, lazy } from 'react';
 import { ImAddressBook } from 'react-icons/im';
 
 import { authOperations, authSelectors } from 'redux/authorization';
-import AppBar from './pages/AppBar';
-import RegisterView from './pages/RegisterView';
-import LoginView from './pages/LoginView';
-import PhonebookView from './pages/PhonebookView';
 import { RestrictedRoute } from 'components/Routes/RestrictedRoute';
 import { PrivateRoute } from 'components/Routes/PrivateRoute';
+
+import AppBar from './pages/AppBar';
+
+const RegisterView = lazy(() => import('./pages/RegisterView'));
+const LoginView = lazy(() => import('./pages/LoginView'));
+const PhonebookView = lazy(() => import('./pages/PhonebookView'));
 
 export const App = () => {
   const dispatch = useDispatch();
