@@ -30,24 +30,29 @@ export const App = () => {
           index
           element={<ImAddressBook size={400} fill="#64b5f6" opacity={0.8} />}
         />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute component={RegisterView} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute component={LoginView} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute component={PhonebookView} redirectTo="/login" />
-          }
-        />
+        <Suspense fallback={<p>Загружаем...</p>}>
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                component={RegisterView}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute component={LoginView} redirectTo="/contacts" />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={PhonebookView} redirectTo="/login" />
+            }
+          />
+        </Suspense>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
