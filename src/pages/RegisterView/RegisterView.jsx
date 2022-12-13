@@ -71,6 +71,9 @@ const RegisterView = () => {
             value={name}
             onChange={handleChange}
             placeholder="Enter your name"
+            minlength="3"
+            maxlength="20"
+            required
           />
         </RegisterLabel>
 
@@ -82,6 +85,9 @@ const RegisterView = () => {
             value={email}
             onChange={handleChange}
             placeholder="Enter your mail"
+            minlength="3"
+            maxlength="20"
+            required
           />
         </RegisterLabel>
 
@@ -99,6 +105,9 @@ const RegisterView = () => {
             value={password}
             onChange={handleChange}
             placeholder="Enter your password"
+            minlength="7"
+            maxlength="15"
+            required
           />
         </RegisterLabel>
 

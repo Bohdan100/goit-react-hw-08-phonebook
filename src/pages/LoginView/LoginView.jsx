@@ -66,6 +66,9 @@ const LoginView = () => {
             value={email}
             onChange={handleChange}
             placeholder="Enter your mail"
+            minlength="3"
+            maxlength="20"
+            required
           />
         </LoginLabel>
 
@@ -83,6 +86,9 @@ const LoginView = () => {
             value={password}
             onChange={handleChange}
             placeholder="Enter your password"
+            minlength="7"
+            maxlength="15"
+            required
           />
         </LoginLabel>
 
