@@ -3,9 +3,7 @@ import { ImCheckmark } from 'react-icons/im';
 import { nanoid } from '@reduxjs/toolkit';
 
 import { addContact } from 'redux/contacts-operations';
-import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 import { selectContacts } from 'redux/selectors';
 
@@ -77,7 +75,6 @@ export const ContactForm = () => {
           </BtnWrapper>
         </PhonebookFormBtn>
       </PhonebookForm>
-      <ToastContainer autoClose={2000} position="top-center" theme="colored" />
     </>
   );
 };

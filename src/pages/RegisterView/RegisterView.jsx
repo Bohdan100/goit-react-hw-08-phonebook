@@ -12,6 +12,8 @@ import {
   InputTextIcon,
 } from './RegisterView.styled';
 
+import { toast } from 'react-toastify';
+
 import { ImEye, ImEyeBlocked, ImUserPlus } from 'react-icons/im';
 
 const RegisterView = () => {
@@ -39,6 +41,18 @@ const RegisterView = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (name.length < 3 || name.length > 20) {
+      toast.error(
+        'Name must contain at least 3 characters and maximum of 20 characters!'
+      );
+      return;
+    }
+    if (password.length < 7 || password.length > 20) {
+      toast.error(
+        'Password must contain at least 7 characters and maximum of 20 characters!'
+      );
+      return;
+    }
     dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');

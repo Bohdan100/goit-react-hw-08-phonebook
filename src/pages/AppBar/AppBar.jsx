@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import UserMenu from 'components/UserMenu';
 import { Navigation } from 'components/UserMenu/Navigation';
@@ -36,6 +38,11 @@ export default function AppBar() {
         <Suspense fallback={<p>Загружаем...</p>}>
           <Outlet />
         </Suspense>
+        <ToastContainer
+          autoClose={2000}
+          position="top-center"
+          theme="colored"
+        />
       </MainWrapper>
     </>
   );
