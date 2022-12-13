@@ -5,7 +5,7 @@ export const MainWrapper = styled.nav`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 200px 0;
   background-color: ${p => p.theme.colors.blueSecond};
   text-align: center;
 `;
