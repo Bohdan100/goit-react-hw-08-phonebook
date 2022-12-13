@@ -6,11 +6,13 @@ export const ContactsListItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+
   gap: 10px;
 `;
 
 export const ContactsListText = styled.span`
   min-width: 185px;
+  text-align: left;
   color: ${p => p.theme.colors.black};
 `;
 
@@ -28,6 +30,6 @@ export const ContactsButtonDelete = styled.button`
   font-size: ${p => p.theme.fontSizes.xs};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.normal};
-  color: ${p => p.theme.colors.red};
-  background-color: ${p => p.theme.colors.green};
+  color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.indigo};
 `;

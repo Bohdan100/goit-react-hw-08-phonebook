@@ -15,7 +15,6 @@ const UserMenu = () => {
         fgColor={'#ffffff'}
         color={'#64b5f6'}
         round={true}
-        mar
       />
       <UserMenuText>Welcome {name}</UserMenuText>
       <ExitBtn type="button" onClick={() => dispatch(authOperations.logOut())}>

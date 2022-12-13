@@ -6,7 +6,7 @@ export const theme = {
     blueSecond: '#e3f2fd',
     blueThird: '#bbdefb',
     blueForth: '#03e9f4',
-    white: '#fff',
+    white: '#ffffff',
     black: '#2a2a2a',
 
     red: '#f44336',

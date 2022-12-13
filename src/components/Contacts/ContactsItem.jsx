@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ImPhoneHangUp, ImBin } from 'react-icons/im';
 
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts-operations';
@@ -20,11 +21,11 @@ export const ContactsItem = ({ id, name, number }) => {
   return (
     <ContactsListItem>
       <ContactsListText>
-        {name}: {number}
+        <ImPhoneHangUp size={14} /> {name}: {number}
       </ContactsListText>
 
       <ContactsButtonDelete type="button" onClick={handleClick}>
-        Delete
+        Delete <ImBin size={14} />
       </ContactsButtonDelete>
     </ContactsListItem>
   );
