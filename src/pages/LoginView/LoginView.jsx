@@ -74,7 +74,7 @@ const LoginView = () => {
 
         <LoginLabel>
           <InputTextWrapper>
-            <span>Password:</span>
+            <span>Password (7 characters minimum):</span>
             <InputTextIcon onClick={togglePassInput}>
               {toggleIcon}
             </InputTextIcon>
