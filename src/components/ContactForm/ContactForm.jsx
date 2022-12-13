@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { ImCheckmark } from 'react-icons/im';
 import { nanoid } from '@reduxjs/toolkit';
 
 import { addContact } from 'redux/contacts-operations';
@@ -10,9 +11,11 @@ import { selectContacts } from 'redux/selectors';
 
 import {
   PhonebookForm,
-  PhonebookFormButton,
+  PhonebookFormBtn,
   PhonebookFormLabel,
   PhonebookFormInput,
+  BtnWrapper,
+  BtnText,
 } from './ContactForm.styled';
 
 export const ContactForm = () => {
@@ -45,23 +48,34 @@ export const ContactForm = () => {
   return (
     <>
       <PhonebookForm onSubmit={handleSubmit}>
-        <PhonebookFormLabel htmlFor={nanoid(5)}>Name</PhonebookFormLabel>
-        <PhonebookFormInput
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-        <PhonebookFormLabel htmlFor={nanoid(5)}>Number</PhonebookFormLabel>
-        <PhonebookFormInput
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-        />
-        <PhonebookFormButton type="submit">Add contact</PhonebookFormButton>
+        <PhonebookFormLabel htmlFor={nanoid(5)}>
+          Name
+          <PhonebookFormInput
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            placeholder="Enter your contact's name"
+            required
+          />
+        </PhonebookFormLabel>
+        <PhonebookFormLabel htmlFor={nanoid(5)}>
+          Number
+          <PhonebookFormInput
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            placeholder="Enter your contact's phone number"
+            required
+          />
+        </PhonebookFormLabel>
+        <PhonebookFormBtn type="submit">
+          <BtnWrapper>
+            <BtnText>Add contact</BtnText>
+            <ImCheckmark fill={'#fff'} />
+          </BtnWrapper>
+        </PhonebookFormBtn>
       </PhonebookForm>
       <ToastContainer autoClose={2000} position="top-center" theme="colored" />
     </>
