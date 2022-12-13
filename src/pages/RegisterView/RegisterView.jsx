@@ -53,6 +53,7 @@ const RegisterView = () => {
       );
       return;
     }
+    console.log({ name, email, password });
     dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');

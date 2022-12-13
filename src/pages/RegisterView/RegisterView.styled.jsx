@@ -22,6 +22,7 @@ export const RegisterForm = styled.form`
   width: 320px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
 `;
 
 export const RegisterLabel = styled.label`

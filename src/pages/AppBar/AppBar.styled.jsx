@@ -13,7 +13,7 @@ export const MainWrapper = styled.nav`
 export const AppBarWrapper = styled.nav`
   width: 90%;
   height: 80px;
-  margin: 0px auto 200px;
+  margin: 0px auto 100px;
   padding: 5px 20px;
 
   display: flex;

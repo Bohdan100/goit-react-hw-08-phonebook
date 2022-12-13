@@ -4,6 +4,7 @@ export const PhonebookForm = styled.form`
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   border: ${p => p.theme.borders.normal};
   border-color: ${p => p.theme.colors.blueFirst};
   border-radius: ${p => p.theme.radii.normal};
