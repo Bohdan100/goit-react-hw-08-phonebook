@@ -1,16 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from 'redux/authorization';
-// import defaultAvatar from './default-avatar.png';
+import Avatar from 'react-avatar';
 
 import { UserMenuWrapper, UserMenuText, ExitBtn } from './UserMenu.styled';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
-  // const avatar = defaultAvatar;
 
   return (
     <UserMenuWrapper>
-      {/* <img src={avatar} alt="" width="32" /> */}
+      <Avatar
+        name={name}
+        size={32}
+        fgColor={'#ffffff'}
+        color={'#64b5f6'}
+        round={true}
+        mar
+      />
       <UserMenuText>Welcome {name}</UserMenuText>
       <ExitBtn type="button" onClick={() => dispatch(authOperations.logOut())}>
         Exit

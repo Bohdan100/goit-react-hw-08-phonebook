@@ -6,6 +6,7 @@ export const UserMenuWrapper = styled.span`
 `;
 
 export const UserMenuText = styled.span`
+  margin-left: 12px;
   margin-right: 12px;
   font-weight: ${p => p.theme.fontWeights.bold};
 `;
