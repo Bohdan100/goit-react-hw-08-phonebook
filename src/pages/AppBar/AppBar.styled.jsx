@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MainWrapper = styled.nav`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   padding: 0 0 200px 0;
   background-color: var(--mainWrapper);
@@ -11,7 +11,7 @@ export const MainWrapper = styled.nav`
 `;
 
 export const AppBarWrapper = styled.nav`
-  width: 90%;
+  width: 90vw;
   height: 80px;
   margin: 0px auto 100px;
   padding: 5px 20px;
@@ -30,20 +30,31 @@ export const AppBarWrapper = styled.nav`
 `;
 
 export const HomeLink = styled(Link)`
-  padding: 10px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-
-  font-size: ${p => p.theme.fontSizes.xl};
+  color: var(--textFirst);
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
-  color: var(--textFirst);
+  font-size: ${p => p.theme.fontSizes.s};
+  padding: 5px;
+
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.m};
+  }
+
+  @media (min-width: 1200px) {
+    font-size: ${p => p.theme.fontSizes.xl};
+    padding: 10px;
+  }
 `;
 
 export const UserWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+
+  @media (min-width: 1200px) {
+    gap: 80px;
+  }
 `;
