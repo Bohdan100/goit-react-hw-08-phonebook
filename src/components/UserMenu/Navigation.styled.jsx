@@ -4,13 +4,24 @@ import { NavLink } from 'react-router-dom';
 export const UserMenuLink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  margin-right: 15px;
-  padding: 10px;
+  margin-right: 5px;
+  padding: 0;
 
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${p => p.theme.fontSizes.xs};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
   color: var(--textBlack);
+
+  @media (min-width: 768px) {
+    padding: 12px 8px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 15px;
+    padding: 10px;
+
+    font-size: ${p => p.theme.fontSizes.m};
+  }
 
   &.active {
     color: var(--textFirst);
