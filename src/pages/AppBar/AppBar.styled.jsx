@@ -12,8 +12,8 @@ export const MainWrapper = styled.nav`
 
 export const AppBarWrapper = styled.nav`
   width: 100vw;
-  height: 80px;
-  margin: 0px auto 100px;
+  height: 60px;
+  margin: 0px auto 20px;
   padding: 5px 10px;
 
   display: flex;
@@ -30,7 +30,9 @@ export const AppBarWrapper = styled.nav`
 
   @media (min-width: 768px) {
     width: 90vw;
+    height: 80px;
     padding: 5px 20px;
+    margin: 0px auto 100px;
   }
 `;
 
