@@ -1,10 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 import { BsBrightnessHigh, BsFillMoonStarsFill } from 'react-icons/bs';
-import {
-  ThemeWrapper,
-  SunIconWrapper,
-  MoonIconWrapper,
-} from './UserTheme.styled';
+import { ThemeWrapper, IconWrapper } from './UserTheme.styled';
 
 export const UserTheme = () => {
   const [theme, setTheme] = useState(
@@ -25,12 +21,12 @@ export const UserTheme = () => {
 
   return (
     <ThemeWrapper>
-      <SunIconWrapper onClick={LightThemeOnClick}>
+      <IconWrapper onClick={LightThemeOnClick}>
         <BsBrightnessHigh />
-      </SunIconWrapper>
-      <MoonIconWrapper onClick={DarkThemeOnClick}>
+      </IconWrapper>
+      <IconWrapper onClick={DarkThemeOnClick}>
         <BsFillMoonStarsFill />
-      </MoonIconWrapper>
+      </IconWrapper>
     </ThemeWrapper>
   );
 };

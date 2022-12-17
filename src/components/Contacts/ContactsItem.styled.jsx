@@ -13,7 +13,7 @@ export const ContactsListItem = styled.li`
 export const ContactsListText = styled.span`
   min-width: 185px;
   text-align: left;
-  color: ${p => p.theme.colors.black};
+  color: var(--textBlack);
 `;
 
 export const ContactsButtonDelete = styled.button`
@@ -31,5 +31,5 @@ export const ContactsButtonDelete = styled.button`
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.normal};
   color: ${p => p.theme.colors.white};
-  background-color: ${p => p.theme.colors.indigo};
+  background-color: var(--contactsButton);
 `;

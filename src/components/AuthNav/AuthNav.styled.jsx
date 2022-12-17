@@ -14,7 +14,7 @@ export const NavigationItem = styled.li`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover {
-    background-color: ${p => p.theme.colors.blueFirst};
+    background-color: var(--textFirst);
     cursor: pointer;
   }
 `;

@@ -6,7 +6,7 @@ export const PhonebookForm = styled.form`
   margin-right: auto;
   margin-bottom: 50px;
   border: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.blueFirst};
+  border-color: var(--borderWrapper);
   border-radius: ${p => p.theme.radii.normal};
 `;
 
@@ -20,7 +20,7 @@ export const PhonebookFormLabel = styled.label`
   font-size: ${p => p.theme.fontSizes.xs};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.normal};
-  color: ${p => p.theme.colors.black};
+  color: var(--textBlack);
 `;
 
 export const PhonebookFormInput = styled.input`
@@ -39,7 +39,7 @@ export const PhonebookFormBtn = styled.button`
   border: ${p => p.theme.borders.none};
   border-radius: ${p => p.theme.radii.normal};
 
-  background-color: ${p => p.theme.colors.indigo};
+  background-color: var(--contactsButton);
 `;
 export const BtnWrapper = styled.div`
   display: flex;

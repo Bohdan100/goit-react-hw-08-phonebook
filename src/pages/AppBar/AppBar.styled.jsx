@@ -38,12 +38,7 @@ export const HomeLink = styled(Link)`
   font-size: ${p => p.theme.fontSizes.xl};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
-  color: ${p => p.theme.colors.blueFirst};
-
-  &:hover,
-  :focus {
-    color: ${p => p.theme.colors.indigo};
-  }
+  color: var(--textFirst);
 `;
 
 export const UserWrapper = styled.div`

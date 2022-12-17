@@ -6,7 +6,7 @@ export const AuthNav = () => {
   return (
     <Box m={[0]} as="ul" display="flex" pl={[0]}>
       <NavigationItem>
-        <NavigationLink to="register">Sign In</NavigationLink>
+        <NavigationLink to="register">Register</NavigationLink>
       </NavigationItem>
       <NavigationItem>
         <NavigationLink to="login">Log In</NavigationLink>

@@ -39,6 +39,10 @@ html[data-theme="dark"] {
   --mainWrapper: #5c6bc0;
   --appBarWrapper: #8c9eff;
   --textFirst: #03e9f4; 
+  --textFirstHover: #4c1b8f;
+  --textBlack: #000000;
+   --contactsButton: #12b8cc;
+   --borderWrapper: #12b8cc;
 }
 
 /*light theme*/
@@ -47,6 +51,10 @@ html[data-theme="light"] {
   --mainWrapper:#e3f2fd;
   --appBarWrapper: #bbdefb;
   --textFirst: #64b5f6; 
+  --textFirstHover: #3f51b5;
+  --textBlack:#2a2a2a;
+  --contactsButton: #3f51b5;
+   --borderWrapper: #64b5f6;
 }
 
 `;

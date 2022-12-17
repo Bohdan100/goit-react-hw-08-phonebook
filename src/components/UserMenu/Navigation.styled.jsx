@@ -10,13 +10,13 @@ export const UserMenuLink = styled(NavLink)`
   font-size: ${p => p.theme.fontSizes.m};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
-  color: ${p => p.theme.colors.black};
+  color: var(--textBlack);
 
   &.active {
     color: var(--textFirst);
   }
 
   &:hover {
-    color: ${p => p.theme.colors.indigo};
+    color: var(--textFirstHover);
   }
 `;

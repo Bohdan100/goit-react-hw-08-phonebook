@@ -13,7 +13,7 @@ const UserMenu = () => {
         name={name}
         size={32}
         fgColor={'#ffffff'}
-        color={'#64b5f6'}
+        color={`var(--textFirst)`}
         round={true}
       />
       <UserMenuText>Welcome {name}</UserMenuText>
