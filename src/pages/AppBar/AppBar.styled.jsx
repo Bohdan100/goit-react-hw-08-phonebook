@@ -11,10 +11,10 @@ export const MainWrapper = styled.nav`
 `;
 
 export const AppBarWrapper = styled.nav`
-  width: 90vw;
+  width: 100vw;
   height: 80px;
   margin: 0px auto 100px;
-  padding: 5px 20px;
+  padding: 5px 10px;
 
   display: flex;
   justify-content: space-between;
@@ -27,6 +27,11 @@ export const AppBarWrapper = styled.nav`
     inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2),
     inset -5px -5px 15px rgba(255, 255, 255, 0.75);
   border-radius: 20px;
+
+  @media (min-width: 768px) {
+    width: 90vw;
+    padding: 5px 20px;
+  }
 `;
 
 export const HomeLink = styled(Link)`
@@ -36,8 +41,12 @@ export const HomeLink = styled(Link)`
   color: var(--textFirst);
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: ${p => p.theme.fontSizes.s};
+  font-size: ${p => p.theme.fontSizes.xs};
   padding: 5px;
+
+  @media (min-width: 400px) {
+    font-size: ${p => p.theme.fontSizes.m};
+  }
 
   @media (min-width: 768px) {
     font-size: ${p => p.theme.fontSizes.m};

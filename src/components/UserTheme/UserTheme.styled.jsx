@@ -8,9 +8,15 @@ export const ThemeWrapper = styled.div`
 
 export const IconWrapper = styled.span`
   color: var(--textBlack);
-  margin-right: 15px;
-  font-size: 20px;
+  font-size: 10px;
+  margin-right: 5px;
+
   opacity: 0.9;
+
+  @media (min-width: 768px) {
+    margin-right: 15px;
+    font-size: 20px;
+  }
 
   &:hover {
     color: var(--textFirst);
