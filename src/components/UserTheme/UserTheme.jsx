@@ -8,7 +8,7 @@ import {
 
 export const UserTheme = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem('user-theme') || 'light-blue'
+    localStorage.getItem('user-theme') || 'light'
   );
 
   useLayoutEffect(() => {
@@ -17,10 +17,10 @@ export const UserTheme = () => {
   }, [theme]);
 
   const LightThemeOnClick = () => {
-    setTheme('light-blue');
+    setTheme('light');
   };
   const DarkThemeOnClick = () => {
-    setTheme('dark-blue');
+    setTheme('dark');
   };
 
   return (

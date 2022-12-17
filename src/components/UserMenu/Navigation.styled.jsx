@@ -13,7 +13,7 @@ export const UserMenuLink = styled(NavLink)`
   color: ${p => p.theme.colors.black};
 
   &.active {
-    color: ${p => p.theme.colors.blueFirst};
+    color: var(--textFirst);
   }
 
   &:hover {

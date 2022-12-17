@@ -6,7 +6,7 @@ export const MainWrapper = styled.nav`
   height: 100%;
   margin: 0 auto;
   padding: 0 0 200px 0;
-  background-color: ${p => p.theme.colors.blueSecond};
+  background-color: var(--mainWrapper);
   text-align: center;
 `;
 
@@ -20,7 +20,7 @@ export const AppBarWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  background-color: ${p => p.theme.colors.blueThird};
+  background-color: var(--appBarWrapper);
   color: ${p => p.theme.colors.black};
   box-shadow: 25px 25px 75px rgba(255, 255, 255, 0.25),
     10px 10px 70px rgba(255, 255, 255, 0.25),

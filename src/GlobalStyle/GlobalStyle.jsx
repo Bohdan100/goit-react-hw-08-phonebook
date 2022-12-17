@@ -32,4 +32,21 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     height: auto;
   }
+
+  /*dark theme*/
+html[data-theme="dark"] {
+  background: var(--background);
+  --mainWrapper: #5c6bc0;
+  --appBarWrapper: #8c9eff;
+  --textFirst: #03e9f4; 
+}
+
+/*light theme*/
+html[data-theme="light"] {
+  background: var(--background);
+  --mainWrapper:#e3f2fd;
+  --appBarWrapper: #bbdefb;
+  --textFirst: #64b5f6; 
+}
+
 `;
