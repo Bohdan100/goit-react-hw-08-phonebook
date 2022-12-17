@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const FilterWrapper = styled.label`
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
 export const FilterLabel = styled.label`
   margin-right: 10px;
 `;

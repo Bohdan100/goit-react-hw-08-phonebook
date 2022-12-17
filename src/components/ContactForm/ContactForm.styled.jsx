@@ -1,17 +1,26 @@
 import styled from 'styled-components';
 
 export const PhonebookForm = styled.form`
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
+  display: block;
+  width: 250px;
+  padding: 10px;
+  margin-right: 0;
+
+  margin-bottom: 30px;
   border: ${p => p.theme.borders.normal};
   border-color: var(--borderWrapper);
   border-radius: ${p => p.theme.radii.normal};
+
+  @media (min-width: 768px) {
+    width: auto;
+    padding: 20px;
+
+    margin-bottom: 50px;
+  }
 `;
 
 export const PhonebookFormLabel = styled.label`
-  width: 320px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -21,15 +30,23 @@ export const PhonebookFormLabel = styled.label`
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.normal};
   color: var(--textBlack);
+
+  @media (min-width: 768px) {
+    width: 320px;
+  }
 `;
 
 export const PhonebookFormInput = styled.input`
-  width: 320px;
+  width: 200px;
   margin-bottom: 30px;
   padding: 5px;
   border-radius: ${p => p.theme.radii.normal};
   background-color: var(--inputWrapper);
   color: var(-textBlack);
+
+  @media (min-width: 768px) {
+    min-width: 320px;
+  }
 `;
 
 export const PhonebookFormBtn = styled.button`

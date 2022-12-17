@@ -17,9 +17,9 @@ const UserMenu = () => {
         color={`var(--textFirst)`}
         round={true}
       />
-      <UserMenuText>Welcome {name}</UserMenuText>
+      <UserMenuText>Welcome {screenWidth > 768 && name}</UserMenuText>
       <ExitBtn type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Logout
+        {screenWidth < 768 ? 'Exit' : 'Log out'}
       </ExitBtn>
     </UserMenuWrapper>
   );

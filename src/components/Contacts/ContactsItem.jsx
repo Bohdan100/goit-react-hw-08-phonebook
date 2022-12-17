@@ -18,6 +18,8 @@ export const ContactsItem = ({ id, name, number }) => {
     dispatch(deleteContact(id));
   };
 
+  const screenWidth = window.innerWidth;
+
   return (
     <ContactsListItem>
       <ContactsListText>
@@ -25,7 +27,7 @@ export const ContactsItem = ({ id, name, number }) => {
       </ContactsListText>
 
       <ContactsButtonDelete type="button" onClick={handleClick}>
-        Delete <ImBin size={14} />
+        Delete <ImBin size={screenWidth < 768 ? 10 : 14} />
       </ContactsButtonDelete>
     </ContactsListItem>
   );

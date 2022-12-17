@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/slice';
 
-import { FilterLabel, FilterInput } from './Filter.styled';
+import { FilterWrapper, FilterLabel, FilterInput } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -13,13 +13,13 @@ export const Filter = () => {
   };
 
   return (
-    <>
+    <FilterWrapper>
       <FilterLabel>Filter contacts by name</FilterLabel>
       <FilterInput
         type="text"
         onChange={changeFilter}
         placeholder="Search name"
       />
-    </>
+    </FilterWrapper>
   );
 };
