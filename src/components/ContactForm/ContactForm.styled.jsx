@@ -28,6 +28,8 @@ export const PhonebookFormInput = styled.input`
   margin-bottom: 30px;
   padding: 5px;
   border-radius: ${p => p.theme.radii.normal};
+  background-color: var(--inputWrapper);
+  color: var(-textBlack);
 `;
 
 export const PhonebookFormBtn = styled.button`

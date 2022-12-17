@@ -18,7 +18,7 @@ const UserMenu = () => {
       />
       <UserMenuText>Welcome {name}</UserMenuText>
       <ExitBtn type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Exit
+        Logout
       </ExitBtn>
     </UserMenuWrapper>
   );

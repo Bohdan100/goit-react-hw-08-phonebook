@@ -35,19 +35,18 @@ export const GlobalStyle = createGlobalStyle`
 
   /*dark theme*/
 html[data-theme="dark"] {
-  background: var(--background);
   --mainWrapper: #5c6bc0;
   --appBarWrapper: #8c9eff;
   --textFirst: #03e9f4; 
-  --textFirstHover: #4c1b8f;
+  --textFirstHover: #6666ff;
   --textBlack: #000000;
-   --contactsButton: #12b8cc;
+   --contactsButton: #6666ff;
    --borderWrapper: #12b8cc;
+   --inputWrapper: #e6e6e6;
 }
 
 /*light theme*/
 html[data-theme="light"] {
-  background: var(--background);
   --mainWrapper:#e3f2fd;
   --appBarWrapper: #bbdefb;
   --textFirst: #64b5f6; 
@@ -55,6 +54,10 @@ html[data-theme="light"] {
   --textBlack:#2a2a2a;
   --contactsButton: #3f51b5;
    --borderWrapper: #64b5f6;
+   --inputWrapper: #ffffff;
 }
 
 `;
+
+// #12b8cc
+// #4c1b8f

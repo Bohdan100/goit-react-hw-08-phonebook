@@ -1,5 +1,1 @@
-export {
-  selectContacts,
-  selectFilter,
-  // selectVisibleContacts,
-} from './selectors';
+export { selectContacts, selectFilter, selectTheme } from './selectors';

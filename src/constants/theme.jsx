@@ -8,16 +8,7 @@ export const theme = {
     blueForth: '#03e9f4',
     white: '#ffffff',
     black: '#2a2a2a',
-
     red: '#f44336',
-
-    redFirst: '#E84A5F',
-    redAccent: '#d32f2f',
-    green: '#4caf50',
-    greenFirst: '#bcdf3f',
-    greenSecond: '#87dd3f',
-    yellowFirst: '#e5e063',
-    yellowSecond: '#e8de04',
   },
 
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],

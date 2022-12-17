@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/slice/filterSlice';
+import { filterContacts } from 'redux/slice';
 
 import { FilterLabel, FilterInput } from './Filter.styled';
 

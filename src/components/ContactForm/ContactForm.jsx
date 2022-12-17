@@ -37,7 +37,7 @@ export const ContactForm = () => {
       dispatch(addContact(newContact));
       toast.info('You add a new contact in your Phonebook!');
     } else {
-      toast.warning('This contact is already in your Phonebook!');
+      toast.error('This contact is already in your Phonebook!');
     }
 
     form.reset();
