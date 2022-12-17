@@ -7,11 +7,12 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
 
+  const screenWidth = window.innerWidth;
   return (
     <UserMenuWrapper>
       <Avatar
         name={name}
-        size={32}
+        size={screenWidth < 768 ? 16 : 32}
         fgColor={'#ffffff'}
         color={`var(--textFirst)`}
         round={true}
