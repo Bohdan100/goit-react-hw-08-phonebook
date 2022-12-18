@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FilterWrapper = styled.label`
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   text-align: start;

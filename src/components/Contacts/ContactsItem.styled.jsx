@@ -18,7 +18,6 @@ export const ContactsListItem = styled.li`
 `;
 
 export const ContactsListText = styled.span`
-  text-align: left;
   color: var(--textBlack);
 
   @media (min-width: 768px) {

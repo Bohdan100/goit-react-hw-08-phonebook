@@ -7,9 +7,11 @@ export const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <nav>
-      <UserMenuLink to="/">Main page</UserMenuLink>
-
-      {isLoggedIn && <UserMenuLink to="/contacts">Contacts</UserMenuLink>}
+      {isLoggedIn ? (
+        <UserMenuLink to="/contacts">Contacts</UserMenuLink>
+      ) : (
+        <UserMenuLink to="/">Main page</UserMenuLink>
+      )}
     </nav>
   );
 };
