@@ -9,20 +9,12 @@ export const ContactsListItem = styled.li`
   align-items: baseline;
 
   @media (min-width: 768px) {
-    width: auto;
-
-    gap: 10px;
-
-    margin-right: ${p => p.theme.space[2]}px;
+    width: 350px;
   }
 `;
 
 export const ContactsListText = styled.span`
   color: var(--textBlack);
-
-  @media (min-width: 768px) {
-    min-width: 185px;
-  }
 `;
 
 export const ContactsButtonDelete = styled.button`

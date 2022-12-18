@@ -8,6 +8,11 @@ export const FilterWrapper = styled.label`
 
   @media (min-width: 768px) {
     display: block;
+    margin-left: 200px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 400px;
   }
 `;
 
