@@ -14,10 +14,11 @@ export const UserMenuLink = styled(NavLink)`
 
   @media (min-width: 768px) {
     padding: 12px 8px;
+    font-size: ${p => p.theme.fontSizes.s};
   }
 
   @media (min-width: 1200px) {
-    margin-right: 15px;
+    margin-left: 15px;
     padding: 10px;
 
     font-size: ${p => p.theme.fontSizes.m};

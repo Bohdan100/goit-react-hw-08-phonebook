@@ -14,6 +14,11 @@ export const IconWrapper = styled.span`
   opacity: 0.9;
 
   @media (min-width: 768px) {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 1200px) {
     margin-right: 15px;
     font-size: 20px;
   }

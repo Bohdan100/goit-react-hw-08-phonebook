@@ -26,4 +26,5 @@ export const FilterInput = styled.input`
   border-radius: ${p => p.theme.radii.normal};
   background-color: var(--inputWrapper);
   color: var(-textBlack);
+  outline: none;
 `;

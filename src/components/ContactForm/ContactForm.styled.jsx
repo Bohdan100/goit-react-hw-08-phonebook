@@ -43,6 +43,7 @@ export const PhonebookFormInput = styled.input`
   border-radius: ${p => p.theme.radii.normal};
   background-color: var(--inputWrapper);
   color: var(-textBlack);
+  outline: none;
 
   @media (min-width: 768px) {
     min-width: 320px;

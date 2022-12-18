@@ -23,7 +23,7 @@ export const UserMenuText = styled.span`
 export const ExitBtn = styled.li`
   width: 30px;
   margin: 0;
-  padding: 0;
+  padding: 2px 0;
 
   border: 1px solid ${p => p.theme.colors.indigo};
   border-radius: ${p => p.theme.radii.border};
@@ -36,12 +36,15 @@ export const ExitBtn = styled.li`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (min-width: 768px) {
-    min-width: 50px;
+    width: 70px;
 
-    margin-right: 15px;
-    padding: 10px;
+    padding: 10px 5px;
 
     font-size: ${props => props.theme.fontSizes.xs};
+  }
+
+  @media (min-width: 1200px) {
+    margin-right: 15px;
   }
 
   :hover {
