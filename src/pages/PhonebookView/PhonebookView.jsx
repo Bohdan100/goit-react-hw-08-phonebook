@@ -7,14 +7,14 @@ import { PhonebookTitle, ContactsTitle } from './PhonebookView.styled';
 
 const PhonebookView = () => {
   return (
-    <>
+    <Box bg={`var(--mainWrapper)`}>
       <PhonebookTitle>Phonebook</PhonebookTitle>
       <ContactForm />
 
       <ContactsTitle>Contacts</ContactsTitle>
       <Filter />
       <Contacts />
-    </>
+    </Box>
   );
 };
 

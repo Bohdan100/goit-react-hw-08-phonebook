@@ -5,7 +5,7 @@ export const MainWrapper = styled.nav`
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  padding: 0 0 200px 0;
+  padding: 0;
   background-color: var(--mainWrapper);
   text-align: center;
 `;
@@ -13,7 +13,7 @@ export const MainWrapper = styled.nav`
 export const AppBarWrapper = styled.nav`
   width: 100vw;
   height: 60px;
-  margin: 0px auto 20px;
+  margin: 0px auto;
   padding: 5px 10px;
 
   display: flex;
@@ -32,7 +32,6 @@ export const AppBarWrapper = styled.nav`
     width: 90vw;
     height: 80px;
     padding: 5px 20px;
-    margin: 0px auto 100px;
   }
 `;
 

@@ -9,6 +9,11 @@ export const PhonebookTitle = styled.h1`
   font-size: ${p => p.theme.fontSizes.l};
   line-height: ${p => p.theme.lineHeights.heading};
   font-weight: ${p => p.theme.fontWeights.bold};
+
+  @media (min-width: 768px) {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const ContactsTitle = styled.h2`
